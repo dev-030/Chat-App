@@ -4,7 +4,7 @@ import { FieldValues , useForm , SubmitHandler } from "react-hook-form";
 import {BsGithub,BsGoogle} from 'react-icons/bs'
 import { Input } from "../../components/input/input";
 import { Button } from "../../components/button";
-import { SocialButton } from "./SocialButto";
+import { SocialButton } from "./SocialButton";
 
 
 
