@@ -5,6 +5,7 @@ import {BsGithub,BsGoogle} from 'react-icons/bs'
 import { Input } from "../../components/input/input";
 import { Button } from "../../components/button";
 import { SocialButton } from "./SocialButton";
+import axios from "axios";
 
 
 
@@ -34,7 +35,8 @@ export default function AuthForm(){
     const onSubmit :SubmitHandler<FieldValues> = (data) => {
         setLoading(true)
         if(variant === 'REGISTER'){
-            // axios register
+            axios.post('/api/register', data)
+            console.log(data)
         }
         if (variant === 'LOGIN'){
             // next auth signint
@@ -54,7 +56,7 @@ export default function AuthForm(){
                         {variant === 'REGISTER' && (
                             <Input id="name" label="Name" register={register} errors={errors} disabled={loading}/>
                         )}
-                        <Input id="Email" label="Email address" type="email" register={register}  disabled={loading} errors={errors}/>
+                        <Input id="email" label="Email address" type="email" register={register}  disabled={loading} errors={errors}/>
                         <Input id="password" label="password" type="password"  disabled={loading} register={register} errors={errors}/>
                             
                         <div>
