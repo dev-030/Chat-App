@@ -3,9 +3,10 @@ import bcrypt from 'bcrypt'
 import NextAuth from 'next-auth/next'
 import GithubProvider from 'next-auth/providers/github'
 import GoogleProvider from 'next-auth/providers/google'
-import Credentials from 'next-auth/providers/credentials'
+import CredentialsProvider from 'next-auth/providers/credentials'
 import prisma from '../../../../libs/prismadb'
 import { AuthOptions } from 'next-auth'
+
 
 
 
@@ -20,10 +21,10 @@ export const authOptions:AuthOptions = {
             clientId: process.env.GOOGLE_CLIET_ID as string,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET as string
         }),
-        Credentials ({
-            name: 'credentials',
+        CredentialsProvider ({
+            name: 'Credentials',
             credentials: {
-                email : {label :'email' , type :'text'},
+                email : {label :'email', type :'email'},
                 password : {label:'password', type:'password'}
             },
             async authorize(credentials) {
