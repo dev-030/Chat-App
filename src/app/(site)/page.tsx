@@ -3,8 +3,6 @@ import AuthForm from "./components/AuthenticationForm";
 
 export default async function Home() {  
 
-  
-  
   return (
     <>
 

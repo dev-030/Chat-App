@@ -8,7 +8,7 @@ interface MobileItemsProps {
     href : string 
     icon : any
     active ?: boolean
-    onClick : () => void;
+    onClick ?: () => void;
 }
 
  
